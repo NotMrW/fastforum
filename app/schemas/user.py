@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel # type: ignore
 
 class UserBase(BaseModel):
     name: str
@@ -9,6 +9,7 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
+    auth_level: str
     hashpass: str
 
     class Config:
